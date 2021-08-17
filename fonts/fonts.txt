@@ -1,0 +1,3 @@
+Raleway https://www.google.com/fonts/specimen/Raleway
+Montserrat https://www.google.com/fonts/specimen/Montserrat
+Roboto https://www.google.com/fonts/specimen/Roboto

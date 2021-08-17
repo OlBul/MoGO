@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 8" width="5" height="8">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #d1d1d1 } 
+	</style>
+	<g id="FOOTER">
+		<g id="About Wacom">
+			<g id="Read More">
+				<path id="arrow" class="shp0" d="M0.95 7.81L4.79 4.35C5 4.16 5 3.84 4.79 3.65L4.76 3.64L0.95 0.18C0.74 -0.01 0.39 -0.01 0.17 0.18L0.17 0.18C0.07 0.27 0 0.4 0 0.54L0 7.46C0 7.6 0.07 7.72 0.18 7.81L0.17 7.81C0.39 8.01 0.74 8.01 0.95 7.81Z" />
+			</g>
+		</g>
+	</g>
+</svg>
