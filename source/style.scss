@@ -32,11 +32,12 @@ $fFRal: "Raleway";
 .container{
     max-width: $maxWidthContainer + px;
     margin: 0 auto;
+    padding: 0 20px;
     @media (max-width: $md1+px) {
-            max-width: 970px;
+            max-width: 1100px;
         }
     @media (max-width: $md2+px) {
-            max-width: 750px;
+            max-width: 790px;
         }
     @media (max-width: $md3+px) {
             max-width: none;
@@ -97,56 +98,59 @@ body{
 .header__slider {
     position: relative;  
     .slick-arrow{
+        display: block;
         position: absolute;
         top: 50%;
         margin: -36px 0 0 0;             
-        background: transparent;
-        font-size: 73px;
-        color: #a3a2a0; 
-               
+        //
+        font-size: 0px;
+        width: 30px;
+        height: 50px;
+        color: #a3a2a0;                    
         &:hover{
             color: #d3c1ac;;
-        }
-        @media (max-width: $md2+px){            
-           font-size: 30px; 
-        }    
-           
+        }         
+        @media (max-width: $md3+px) {
+            background: transparent;
+        }         
     } 
-    ._icon-left{
+    
+    .slick-prev {
+        background: url('../image/Block_01/left.svg')0 0/100% no-repeat;
         left: 150px;
-        z-index: 1000;          
+        z-index: 1000;           
         @media (max-width: $md1+px){
             left: 100px;
         }
         @media (max-width: $md2+px){
             left: 50px;            
-        }
-        @media (max-width: $md3+px){            
-            display: none; 
-         }
-    }
-    ._icon-right{       
+        }  
+        @media (max-width: $md3+px) {
+            background: transparent;
+        }     
+    }    
+
+    .slick-next {  
+        background: url('../image/Block_01/right.svg')0 0/100% no-repeat;
         right: 150px;
-        z-index: 1000;
+        z-index: 1000;        
         @media (max-width: $md1+px){
             right: 100px; 
         }
         @media (max-width: $md2+px){
             right: 50px;            
         }
-        @media (max-width: $md3+px){            
-            display: none; 
-         }
+        @media (max-width: $md3+px) {
+            background: transparent;
+        } 
+       
     }
-    .slick-prev,
+    /*.slick-prev,
     .slick-next{
         @media (max-width: $md3+px){            
             display: none; 
          }
-    }
-    
-    
-
+    }*/
     .slick-dots{
         position: absolute;
         left: 50%;
@@ -157,20 +161,17 @@ body{
         align-items: center;
         justify-content: center;        
     }
-
     .slick-dots li{
         list-style: none;
         margin: 0 7px 0 0;        
-    }
-    
+    }    
     .slick-dots li.slick-active button{
         border-radius: 50%;
         border: solid 2px #d3c1ad;
         width: 18px;
         height: 18px;
         background-color: transparent;
-    }
-    
+    }    
     .slick-dots li button{
         font-size: 0;
         width: 13px;
@@ -179,7 +180,6 @@ body{
         border-radius: 50%;
     }    
 }
-
 .header__slider-item {
     position: relative;
     img{
@@ -202,8 +202,7 @@ body{
     width: 100%;
     top: 0;
     left: 0;   
-    z-index: 1100; 
-       
+   /* z-index: 1100;        
     &::before{
         content: '';
         position: absolute;
@@ -212,9 +211,9 @@ body{
         width: 100%;
         height: 100%;
         background-color: #988574 0.8;
-        z-index: 1012;     
+        z-index: 1012;  
         
-    }    
+    }    */
 }
 
 .header__body{
@@ -233,7 +232,7 @@ body{
     }
     @media (max-width: $md3+px){
         justify-content: space-around; 
-               
+        
     }
 
 }
@@ -294,8 +293,7 @@ body{
 }
 // =============================
 .header__logo {    
-    display: flex;    
-    margin: 0 200px 0 0;  
+    display: flex;   
     position: relative;
     z-index: 1012;
       
@@ -329,7 +327,7 @@ body{
     @media (max-width: $md3+px){
          flex: 0 0 44px;
      }
-     //==========
+     //===============================================
 }
 
 .header__logo-title {        
@@ -342,6 +340,7 @@ body{
 }
 
 .header__nav{
+    margin: 0 0 0 auto;
     transition: $transition;    
     @media (max-width: $md2+px){      
         order: 3;             
@@ -360,28 +359,41 @@ body{
 @media (max-width: $md3+px){
 .header__nav.active{           
          top: 0;       
-         position: fixed;      
-         }
+         position: fixed;     
+         &::before{
+             content: '';
+             position: fixed;
+             top: 0;
+             height: 65px;
+             width: 100%;
+             background-color: #432e28; 
+        }         
+    }
 }
 
 .list-header {   
     display: flex;
     margin: 0 60px 0 0;      
-    @media (max-width: $md2+px){
+    @media (max-width: $md2 + px){
         margin: 20px 0 0 0;
     }
-    @media (max-width: $md3+px){
+    @media (max-width: $md3 + px){
         display: block;
         text-align: center;
-        padding: 50px 0 0 0;
-        margin: 0;          
-    }
+        padding: 80px 0 0 0;
+        margin: 0;           
+    }   
 }
 
-.list-header__link {       
-    a{
-        display: inline-block;        
-        padding: 5px 15px; 
+.list-header__link { 
+    margin: 0 10px;
+   ._active {
+         background-size: 100% 1px;
+        transition: $transition; 
+        color: #c7b299;
+ }      
+    a{              
+        padding: 5px; 
         font-size: 14px;
         color: #ffffff;
         font-weight: 300;
@@ -395,22 +407,25 @@ body{
                     background-size: 100% 1px;
                     transition: $transition; 
                     color: #c7b299;
-                }        
-       
+                }              
     
-        @media (max-width: $md1+px){
-             padding: 0 20px 0 0; 
-        } 
-        @media (max-width: $md2+px){
-            padding: 0 30px 0 0;
-        }
-        @media (max-width: $md3+px){
-            padding: 15px 20px;
+        
+        @media (max-width: $md3+px){            
             font-size: 24px;
-            font-weight: 500;  
-           
+            font-weight: 500;             
         }       
    }
+         @media (max-width: $md1+px){
+             margin: 0 20px 0 0; 
+        } 
+        @media (max-width: $md2+px){
+            margin: 0 30px 0 0;
+        }
+         @media (max-width: $md3+px){
+            margin: 15px 20px;
+            font-size: 24px;
+            font-weight: 500;             
+        }    
 }   
 
 
@@ -422,8 +437,7 @@ body{
     }     
     // header menu ============
     @media (max-width: $md3+px){         
-         margin: 0 0px 0 0;
-
+         margin: 0 0px 0 0;       
      } 
      //==================
 } 
@@ -468,7 +482,7 @@ body{
         top: 100px;        
     }
     @media (max-width: $md4+px){
-        top: 70px;        
+       // top: 70px;        
     }
     
 }
@@ -490,7 +504,7 @@ body{
     line-height: 1.5em;
     @include adaptiv-font(52, 28);
     white-space: nowrap;
-    @media (max-width: $md4+px){
+    @media (max-width: $md4 + px){
         margin: 0 0 20px; 
    }
 }
@@ -518,7 +532,7 @@ body{
 
 // =========  services  ==========
 .services {
-    padding: 50px 0;
+    padding: 50px 0;    
     @media (max-width: $md3+px){
         padding: 30px 0;   
     }
@@ -851,10 +865,6 @@ body{
     }
 }
 
-
-
-.item-active{    
-}
 .project__item-image { 
     position: relative;   
     .img-link, .img-lupa{
@@ -1079,9 +1089,7 @@ body{
         line-height: 24px;
     }
 }
-.phone__list {
 
-}
 .phone__list-string {  
     padding: 0 0 0 83px; 
     @media (max-width: $md1+px){
@@ -1428,7 +1436,8 @@ align-items: center;
     flex-wrap: wrap;
 }
 @media (max-width: $md3+px){
-    margin: 0 -10px;
+    margin: 0 0px;
+    justify-content: space-around;
 }
 }
 .partners__logo-01 {
@@ -1442,10 +1451,12 @@ align-items: center;
         text-align: center;
     }
     @media (max-width: $md2+px){
-        flex: 0 0 40%;
+      flex: 0 0 40%;
     }
     @media (max-width: $md3+px){
-        padding: 30px 15px;
+        padding: 30px 15px;       
+    }
+    @media (max-width: $md5+px) {
         flex: 0 0 90%;
     }
 }
@@ -1621,3 +1632,30 @@ align-items: center;
         padding: 5px 0;
     }
 }
+
+// ========= Arrow Up ==========================================================================
+
+html {
+    scroll-behavior: smooth;
+}
+ .arrow__up {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(153, 148, 148, 0.7);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 1;
+    &_hiden {
+    opacity: 0;
+    }
+}
+.arrow__link {  
+    display: inline-flex;
+}
+ 
