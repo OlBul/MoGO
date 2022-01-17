@@ -87,6 +87,7 @@ $(document).ready(function () {
     let heightHeader = $('.header').innerHeight();
     let scrollOffset = 0;
     let arrowUp = $('.arrow__up'); 
+    let listHeaderLink = $('.list-header__link a');
 
     $(window).scroll(function () {
 
@@ -99,9 +100,16 @@ $(document).ready(function () {
         if (scrollOffset >= heightHeader) {
             arrowUp.removeClass('arrow__up_hiden');
         } else {
-            arrowUp.addClass('arrow__up_hiden');
+          arrowUp.addClass('arrow__up_hiden');
+          listHeaderLink.removeClass('_active');
         }
-    }
+  };
+
+  
+    $(listHeaderLink).click(function (event) {
+        $(listHeaderLink).removeClass('_active');
+        $(this).addClass('_active');
+    });
 
     // ========= Scroll =========================================================
     $('[data-goto').click(function (event) {
@@ -116,7 +124,7 @@ $(document).ready(function () {
     });
 
     // ======= Project link =================================================
-    let listHeaderLink = $('.list-header__link a');
+    
     let projectLink = $('.project__link');
 
     $(projectLink).click(function (event) {
@@ -124,10 +132,6 @@ $(document).ready(function () {
         $(this).addClass('active');
     });
 
-    $(listHeaderLink).click(function (event) {
-        $(listHeaderLink).removeClass('_active');
-        $(this).addClass('_active');
-    });
   
 
     // ======== Video =======================================================
