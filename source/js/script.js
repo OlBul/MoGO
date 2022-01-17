@@ -30,50 +30,43 @@ $(document).ready(function () {
       },
     ]  
     
-  })
- /* $('.header__slider>.slick-arrow[aria-label=Previous]').removeClass('slick-prev').addClass('_icon-left');
-  $('.header__slider>.slick-arrow[aria-label=Next]').removeClass('slick-next').addClass('_icon-right');  
-  $('.slick-arrow').text('');*/
-  });
+  }) 
+});
 
 
 // ========== Slider=====================================================================
 
 $(document).ready(function () {
-    $('.posts__column').slick({
-        adaptiveHeight: true,
-        slidesToShow: 3,
-        speed: 500,
-        waitForAnimate: false,
-        centerMode:false,
-        responsive: [
-          {
-            breakpoint: 992,
-            settings: {              
-              infinite: true,              
-              slidesToShow: 2,
-            }
-          },
-            {
-            breakpoint: 480,
-            settings: {              
-              infinite: true,              
-              slidesToShow: 1,
-              centerMode:true,              
-            }
+  $('.posts__column').slick({
+    adaptiveHeight: true,
+    slidesToShow: 3,
+    speed: 500,
+    waitForAnimate: false,
+    centerMode: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          infinite: true,
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          infinite: true,
+          slidesToShow: 1,
+          centerMode: true,
+        }
           
-          },
-        ]
-    });
-    $('.posts__column>.slick-arrow[aria-label=Previous]').removeClass('slick-prev').addClass('_icon-left-min');
-  $('.posts__column>.slick-arrow[aria-label=Next]').removeClass('slick-next').addClass('_icon-right-min');  
+      },
+    ]
+  });
+  $('.posts__column>.slick-arrow[aria-label=Previous]').removeClass('slick-prev').addClass('_icon-left-min');
+  $('.posts__column>.slick-arrow[aria-label=Next]').removeClass('slick-next').addClass('_icon-right-min');
   $('button.slick-arrow').text('');
-  
     
-})
-/*$('.slick-arrow[aria-label=Previous]').addClass('_icon-left-min');
-  $('.slick-arrow[aria-label=Next]').addClass('_icon-right-min');  
-  $('button.slick-arrow').text('');*/
+});
 
 
 
@@ -87,6 +80,7 @@ $(document).ready(function () {
     
     $('.list-header__link a').click(function () {
       $('.header__burger, .header__nav').removeClass('active');
+      $('body').removeClass('lock');
     })
 
     // ======= Arrow Up =======================================================
